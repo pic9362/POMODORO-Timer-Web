@@ -47,3 +47,12 @@ document.querySelector(".btn-settings").onclick = () => {
 };
 
 render();
+
+const clockEl = document.querySelector(".clock");
+
+function renderClock() {
+  clockEl.textContent = new Date().toLocaleTimeString("en-US", { hour12: true });
+}
+
+renderClock();
+setInterval(renderClock, 1000);
